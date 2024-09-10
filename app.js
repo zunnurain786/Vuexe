@@ -25,12 +25,12 @@ app.use(express.json());
 app.use(cors());
 
 //static file
-app.use(express.static(path.join(__dirname, "../client")));
+app.use(express.static(path.join(__dirname, "./client")));
 
 app.use("/api", Routes);
 
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+  res.sendFile(path.join(__dirname, "./client/dist/index.html"));
 });
 
 app.listen(port, () => {
